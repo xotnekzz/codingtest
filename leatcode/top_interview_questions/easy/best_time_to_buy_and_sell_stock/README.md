@@ -21,7 +21,10 @@ def maxProfit(prices: list[int]) -> int:
         if prices[i] > prices[i-1]:
             profit += prices[i] - prices[i-1]
     return profit
+```
 
+- 시간 복잡도 : $O(n) — 배열을 딱 한 번만 순회합니다.
+- 공간 복잡도 : $O(1)$ — total_profit 변수 하나만 있으면 됩니다.
 ---
 
 ## 3. 풀이 방법 2: DP (동적계획법)
@@ -58,3 +61,6 @@ class Solution:
         # 마지막 날엔 주식(종이조각)보다 현금(free)이 무조건 이득이므로 free 반환
         return free
 ```
+
+- 시간 복잡도: $O(n) — 각 날짜별로 두 가지 상태(보유/미보유)를 계산합니다.
+- 공간 복잡도: $O(n) — 모든 날짜의 최적 수익을 저장할 배열이 필요합니다.비유: 매일매일 "내가 주식을 들고 있을 때의 최대 수익"과 "안 들고 있을 때의 최대 수익"을 커다란 전지에 기록하며 나가는 것.
